@@ -135,6 +135,12 @@ function App() {
 		setLocation('')
 	}
 
+	useEffect(() => {
+		window.onload = () => {
+			alert('Enter a location in the search bar to show data')
+		}
+	})
+
 	return (
 		<div className="container">
 
