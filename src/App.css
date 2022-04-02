@@ -1,38 +1,245 @@
-.App {
-  text-align: center;
+:root {
+	--primary-background: #171717;
+	--secondary-background: #444444;
+	--light-grey: light-grey;
+	--text: #ffffff;
+	--pink: #ff084a;
+	--purple: #800080;
+	--orange: #ffa500;
+	--lime: #00ff00;
+	--red: #f44336;
+	--yellow: #ffff00;
+	--aqua: #00ffff;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+	font-family: 'Nunito', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 62.5%;
+	color: var(--text)
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+	font-size: 4rem;
+} h2 {
+	font-size: 3.8rem;
+} h3 {
+	font-size: 3.6rem;
+} h4 {
+	font-size: 3.4rem;
+} h5 {
+	font-size: 3.2rem;
+} h6 {
+	font-size: 3rem;
+} p {
+	font-size: 2rem;
+} a {
+	font-size: 1.8rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+html, body {
+	background: var(--primary-background);
+	min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+	max-width: 1280px;
+	min-height: 100vh;
+	margin: 0 auto;
+	/* background: var(--primary-background); */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* search bar div */
+.search-bar {
+	width: 100%;
+	min-height: 10vh;
+	display: flex;
+	justify-content: center;	
+	padding: .5rem 0;
+}
+
+.search-bar input[type='text'] {
+	width: 75%;
+	font-size: 2.5rem;
+	padding: 0 2rem;
+	border-radius: 20px 0px 0px 20px;
+	border: none;
+	background: var(--secondary-background);
+	text-align: center;
+	outline: none;
+}
+
+.search-bar button {
+	width: 5%;
+	border: none;
+	border-radius: 0px 20px 20px 0px;
+	cursor: pointer;
+	background: var(--secondary-background);
+	font-size: 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s;
+}
+.search-bar button:hover {
+	font-size: 4.5rem;
+}
+
+/* city stats div */
+.city-stats {
+	width: 100%;
+	min-height: 40vh;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+}
+.city-stats .icon-temp {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.city-stats .icon-temp img {
+	width: 50%;
+}
+.city-stats .other-stats {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;	
+	margin-top: 2rem;
+}
+.other-stats .stat {
+	margin: 0 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	border-radius: 20px;
+	border: none;
+	background: var(--secondary-background);
+}
+.other-stats .stat .title {
+	margin-right: 1rem;
+}
+.other-stats .stat .units {
+	margin-left: 1rem;
+}
+/* daily summary */
+.daily-summary {
+	width: 100%;
+	min-height: 50vh;
+	padding: 1rem 3rem;
+	display: flex;
+	flex-direction: column;	
+}
+.daily-summary h4 {
+	margin-left: 2rem;
+}
+.summary-container {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.summary-container .summary{
+	width: 18%;
+	min-height: 30vh;	
+	margin: 1rem 1rem;
+	border-radius: 20px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+	background: var(--secondary-background);
+}
+.icon-weather {
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}
+.icon-weather img {
+	width: 30%;
+}
+
+.sum1, 
+.sum2,
+.sum3,
+.sum4,
+.sum5 {
+	position: relative;	
+	overflow: hidden;
+}
+
+.sum1::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 3%;
+	background: var(--pink);
+}
+.sum2::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 3%;
+	background: var(--lime);
+}
+.sum3::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 3%;
+	background: var(--yellow);
+}
+.sum4::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 3%;
+	background: var(--aqua);
+}
+.sum5::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 3%;
+	background: var(--orange);
+}
+
+
+@media screen and (max-width: 800px) {
+	.search-bar input[type='text'] {
+		width: 80%;
+	}
+	.search-bar button {
+		width: 15%;
+	}
+	.city-stats h1, 
+	.city-stats .icon-temp,
+	.city-stats .description,
+	.city-stats .other-stats {
+		margin: .5rem 0;
+	}
+	.other-stats .stat {
+		width: 70%;
+		margin: .5rem 0;
+	}
+	.summary-container .summary{
+		width: 100%;
+		margin: 1rem 0;
+	}
+	.daily-summary h4 {
+		text-align: center;
+		margin: 0;
+	}
 }
